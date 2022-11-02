@@ -42,26 +42,9 @@ class AccommoController {
     };
 
     getAllAccommodations = async (req, res, next) => {
-        let data = [];
         try {
             const accommoList =
                 await this.accommoService.getAllAccommodations();
-
-            // for(let i = 0 ; i < accommoList.length; i++) {
-            //     data.push({
-
-            //         accId: accommoList[i].accId,
-            //         accName: accommoList[i].accName,
-            //         accAddr: accommoList[i].accAddr,
-            //         price: accommoList[i].price,
-            //         rating: accommoList[i].rating,
-            //         maxPerson: accommoList[i].maxPerson,
-            //         bed: accommoList[i].bed,
-            //         room: accommoList[i].room,
-            //         bathroom: accommoList[i].bathroom
-
-            //     })
-            // }
             
             res.status(200).json( accommoList );
         } catch (err) {

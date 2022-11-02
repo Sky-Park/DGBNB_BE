@@ -43,8 +43,6 @@ class AccommoService {
             bathroom,
             facilities,
         });
-
-    
         
         const hostedAccommo = await this.accommoRepository.saveAccommodation(
             option, accImg
@@ -103,7 +101,7 @@ class AccommoService {
 
         const existAccommo = await this.accommoRepository.getAccommoDetails(accId)
 
-        if (existAccommo.memberId !== memberId) { throw new Error ('수정 권한이 없습니다')}
+        if (existAccommo.memberId !== memberId) { throw new Error ('수정 권한이 없습니다') }
 
         const accImg = fileData.map((data) => {
             let result = [];

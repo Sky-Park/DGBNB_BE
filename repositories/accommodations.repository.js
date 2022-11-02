@@ -28,8 +28,7 @@ class AccommoRepository {
     getAllAccommodations = async () => {
         return await Accommodations.findAll({
             include: {model: AccommodationsPictures, attributes: ['thumbnail']}
-
-    });
+        });
     };
 
     getAccommoDetails = async (accId) => {
